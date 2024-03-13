@@ -8,7 +8,6 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-
 public class PersonVOV2 extends RepresentationModel<PersonVOV2> implements Serializable {
 
     @Serial
@@ -25,15 +24,22 @@ public class PersonVOV2 extends RepresentationModel<PersonVOV2> implements Seria
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || this.getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || this.getClass() != o.getClass())
+            return false;
         PersonVOV2 that = (PersonVOV2) o;
-        return this.getKey() == that.getKey() && Objects.equals(this.getFirstName(), that.getFirstName()) && Objects.equals(this.getLastName(), that.getLastName()) && Objects.equals(this.getAddress(), that.getAddress()) && Objects.equals(this.getGender(), that.getGender()) && Objects.equals(this.getBirthDay(), that.getBirthDay());
+        return this.getKey() == that.getKey() && Objects.equals(this.getFirstName(), that.getFirstName())
+                && Objects.equals(this.getLastName(), that.getLastName())
+                && Objects.equals(this.getAddress(), that.getAddress())
+                && Objects.equals(this.getGender(), that.getGender())
+                && Objects.equals(this.getBirthDay(), that.getBirthDay());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.getKey(), this.getFirstName(), this.getLastName(), this.getAddress(), this.getGender(), this.getBirthDay());
+        return Objects.hash(this.getKey(), this.getFirstName(), this.getLastName(), this.getAddress(), this.getGender(),
+                this.getBirthDay());
     }
 
     public long getKey() {

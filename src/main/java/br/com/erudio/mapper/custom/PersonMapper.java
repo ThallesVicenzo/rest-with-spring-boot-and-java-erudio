@@ -24,7 +24,7 @@ public class PersonMapper {
         Person entity = new Person();
         entity.setId(person.getKey());
         entity.setAddress(person.getAddress());
-//        entity.setBirthDay(new Date());
+        // entity.setBirthDay(new Date());
         entity.setFirstName(person.getFirstName());
         entity.setLastName(person.getLastName());
         entity.setGender(person.getGender());

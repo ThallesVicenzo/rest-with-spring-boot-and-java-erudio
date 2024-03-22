@@ -8,8 +8,7 @@ import org.springframework.hateoas.RepresentationModel;
 import java.io.Serializable;
 import java.util.Objects;
 
-
-@JsonPropertyOrder({"id", "first_name", "last_name", "address", "gender",})
+@JsonPropertyOrder({ "id", "first_name", "last_name", "address", "gender", })
 public class PersonVO extends RepresentationModel<PersonVO> implements Serializable {
 
     private static final long serialVersionUID = 0L;
@@ -26,17 +25,23 @@ public class PersonVO extends RepresentationModel<PersonVO> implements Serializa
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || this.getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || this.getClass() != o.getClass())
+            return false;
         PersonVO person = (PersonVO) o;
-        return Objects.equals(this.getKey(), person.getKey()) && Objects.equals(this.getFirstName(), person.getFirstName()) && Objects.equals(this.getLastName(), person.getLastName()) && Objects.equals(this.getAddress(), person.getAddress()) && Objects.equals(this.getGender(), person.getGender());
+        return Objects.equals(this.getKey(), person.getKey())
+                && Objects.equals(this.getFirstName(), person.getFirstName())
+                && Objects.equals(this.getLastName(), person.getLastName())
+                && Objects.equals(this.getAddress(), person.getAddress())
+                && Objects.equals(this.getGender(), person.getGender());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.getKey(), this.getFirstName(), this.getLastName(), this.getAddress(), this.getGender());
+        return Objects.hash(this.getKey(), this.getFirstName(), this.getLastName(), this.getAddress(),
+                this.getGender());
     }
-
 
     public long getKey() {
         return this.key;

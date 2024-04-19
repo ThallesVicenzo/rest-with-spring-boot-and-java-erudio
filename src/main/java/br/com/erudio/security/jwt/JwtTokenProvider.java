@@ -10,6 +10,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.auth0.jwt.JWT;
@@ -22,6 +23,7 @@ import br.com.erudio.exceptions.InvalidJwtAuthenticationException;
 import jakarta.annotation.PostConstruct;
 import jakarta.servlet.http.HttpServletRequest;
 
+@Service
 public class JwtTokenProvider {
   @Value("${security.jwt.token.secret-key:secret}")
   private String secretKey = "secret";
